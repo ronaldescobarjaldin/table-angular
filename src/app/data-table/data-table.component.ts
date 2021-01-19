@@ -6,15 +6,13 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.css'],
 })
-export class DataTableComponent implements OnInit {
+export class DataTableComponent {
   @Input() title: string;
   @Input() footer: string;
   @Input() headers: string[];
   @Input() data: any[];
 
   constructor() {}
-
-  ngOnInit = (): void => {};
 
   originalOrder = (
     a: KeyValue<number, string>,
