@@ -6,7 +6,7 @@
     </thead>
     <tbody>
         <tr *ngFor="let element of data; index as i">
-            <td *ngFor="let property of element | keyvalue">{{ property.value }}</td>
+            <td *ngFor="let property of element | keyvalue: originalOrder">{{ property.value }}</td>
         </tr>
     </tbody>
 </table>
