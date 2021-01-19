@@ -10,7 +10,7 @@ export class InMemoryDataService implements InMemoryDbService {
 
   // tslint:disable-next-line:typedef
   createDb() {
-    const table = [ {
+    const table = {
       titulos: {titulo: 'tabla muestra', pie: 'catolica'},
       encabezados: ['nombre', 'carrera', 'semestre'],
       datos: [
@@ -35,7 +35,7 @@ export class InMemoryDataService implements InMemoryDbService {
           semestre: '1-2020'
         }
       ]
-    }];
+    };
     return {table};
   }
 

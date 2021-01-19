@@ -1,34 +1,34 @@
 import { Component } from '@angular/core';
+import { ServiceTableService } from './services/service-table.service';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   title = 'My Table';
+  private tableUrl = 'api/table';
   columns: string[];
   data: any[];
-  
+  tableTitle: string;
+  tableFooter: string;
+
+  constructor(private tableService: ServiceTableService) {}
+
   ngOnInit(): void {
     this.getData();
   }
 
   getData(): void {
-    this.columns = ['name', 'age', 'career', 'birthDate'];
-    this.data = [
-      {
-        name: 'Ronald',
-        age: 22,
-        career: 'Sistemas',
-        birthDate: '07/01/1999'
-      },
-      {
-        name: 'Pepito',
-        age: 21,
-        career: 'Comercial',
-        birthDate: '15/11/1998'
-      },
-    ];
+    this.tableService
+      .getDataTableApi(this.tableUrl)
+        .subscribe(({ titulos, encabezados, datos }) => {
+        const { titulo, pie } = titulos;
+        this.tableTitle = titulo;
+        this.tableFooter = pie;
+        this.columns = encabezados;
+        this.data = datos;
+      });
   }
 }
