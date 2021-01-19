@@ -14,7 +14,7 @@ export class InMemoryDataService implements InMemoryDbService {
         title: 'tabla muestra',
         footer: 'catolica',
       },
-      headers: ['Nombre', 'Carrera', 'semester', 'Año de nacimiento'],
+      headers: ['Nombre', 'Carrera', 'Semestre', 'Año de nacimiento'],
       data: [
         {
           name: 'Marcelo Duran',
