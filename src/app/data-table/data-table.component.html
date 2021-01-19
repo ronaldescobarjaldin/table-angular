@@ -1,0 +1,22 @@
+<div>
+  <div>
+    <h2 *ngIf="title">{{title}}</h2>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let column of columns">{{ column }}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let element of data; index as i">
+        <td *ngFor="let property of element | keyvalue: originalOrder">
+          {{ property.value }}
+        </td>
+      </tr>
+      <tr *ngIf="footer">
+          <td>{{footer}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
