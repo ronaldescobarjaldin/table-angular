@@ -6,5 +6,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'table-angular';
+  title = 'My Table';
+  columns: string[];
+  data: any[];
+  
+  ngOnInit(): void {
+    this.getData();
+  }
+
+  getData(): void {
+    this.columns = ['name', 'age'];
+    this.data = [
+      {
+        name: 'Ronald',
+        age: 22,
+      },
+      {
+        name: 'Pepito',
+        age: 21,
+      }
+    ]
+  }
 }
