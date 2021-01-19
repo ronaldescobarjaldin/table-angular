@@ -7,6 +7,9 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./data-table.component.css'],
 })
 export class DataTableComponent implements OnInit {
+  
+  @Input() title: string;
+  @Input() footer: string;
   @Input() data: any[];
   @Input() columns: string[];
 
