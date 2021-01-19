@@ -7,9 +7,9 @@ import { ServiceTableService } from './services/service-table.service';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title = 'My Table';
+  appTitle = 'Mi aplicación de prueba';
   private tableUrl = 'api/table';
-  columns: string[];
+  headers: string[];
   data: any[];
   tableTitle: string;
   tableFooter: string;
@@ -23,12 +23,12 @@ export class AppComponent {
   getData(): void {
     this.tableService
       .getDataTableApi(this.tableUrl)
-        .subscribe(({ titulos, encabezados, datos }) => {
-        const { titulo, pie } = titulos;
-        this.tableTitle = titulo;
-        this.tableFooter = pie;
-        this.columns = encabezados;
-        this.data = datos;
+        .subscribe(({ titles, headers, data }) => {
+        const { title, footer } = titles;
+        this.tableTitle = title;
+        this.tableFooter = footer;
+        this.headers = headers;
+        this.data = data;
       });
   }
 }

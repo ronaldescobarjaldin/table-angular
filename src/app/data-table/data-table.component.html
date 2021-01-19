@@ -5,11 +5,11 @@
   <table class="table table-striped">
     <thead>
       <tr>
-        <th scope="col" *ngFor="let column of columns">{{ column }}</th>
+        <th scope="col" *ngFor="let header of headers">{{ header }}</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let element of data; index as i">
+      <tr *ngFor="let element of data">
         <td *ngFor="let property of element | keyvalue: originalOrder">
           {{ property.value }}
         </td>

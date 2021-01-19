@@ -2,41 +2,52 @@ import { Injectable } from '@angular/core';
 import { InMemoryDbService } from 'angular-in-memory-web-api';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class InMemoryDataService implements InMemoryDbService {
+  
+  constructor() {}
 
-  constructor() { }
-
-  // tslint:disable-next-line:typedef
   createDb() {
     const table = {
-      titulos: {titulo: 'tabla muestra', pie: 'catolica'},
-      encabezados: ['nombre', 'carrera', 'semestre'],
-      datos: [
+      titles: {
+        title: 'tabla muestra',
+        footer: 'catolica',
+      },
+      header: ['Nombre', 'Carrera', 'semester', 'Año de nacimiento'],
+      data: [
         {
-          nombre: 'Marcelo Duran',
-          carrera: 'comercial',
-          semestre: '1-2019'
+          name: 'Marcelo Duran',
+          career: 'comercial',
+          semester: '1-2019',
+          birthYear: 1999,
         },
         {
-          nombre: 'Carlos Dub',
-          carrera: 'sistemas',
-          semestre: '1-2018'
+          name: 'Carlos Dub',
+          career: 'sistemas',
+          semester: '1-2018',
+          birthYear: 1999,
         },
         {
-          nombre: 'Ana soliz',
-          carrera: 'civil',
-          semestre: '1-2017'
+          name: 'Ana soliz',
+          career: 'civil',
+          semester: '1-2017',
+          birthYear: 1999,
         },
         {
-          nombre: 'Cristian Pardo',
-          carrera: 'Mecanica',
-          semestre: '1-2020'
-        }
-      ]
+          name: 'Cristian Pardo',
+          career: 'Mecanica',
+          semester: '1-2020',
+          birthYear: 1999,
+        },
+        {
+          name: 'Pepito perez',
+          career: 'Mecanica',
+          semester: '1-2020',
+          birthYear: 1999,
+        },
+      ],
     };
-    return {table};
+    return { table };
   }
-
 }
