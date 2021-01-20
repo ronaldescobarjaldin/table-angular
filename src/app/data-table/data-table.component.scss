@@ -1,3 +1,5 @@
+@import '../../styles.scss';
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,18 +15,18 @@
 
 tr,
 td {
-  border: solid 0.11rem #80808063;
+  border: solid 0.11rem $gray-web;
 }
 
 table th {
   border: solid 0.11rem white;
-  background: #004177;
+  background: $indigo-dye;
   color: white;
   font-size: 0.85rem;
 }
 
 .footer {
-  background: #004177;
+  background: $indigo-dye;
   color: white;
   font-weight: bold;
   text-align: end;
@@ -60,7 +62,7 @@ table th {
 
 @media (max-width: 850px) {
   tr {
-    border: solid 0.2rem #004177;
+    border: solid 0.2rem $indigo-dye;
   }
 }
 
