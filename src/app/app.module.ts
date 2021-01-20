@@ -8,12 +8,14 @@ import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './services/in-memory-data.service';
 import { TestComponent } from './test/test.component';
 import { DataTableComponent } from './data-table/data-table.component';
+import { ThemePickerComponent } from './theme-picker/theme-picker.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TestComponent,
-    DataTableComponent
+    DataTableComponent,
+    ThemePickerComponent
   ],
   imports: [
     BrowserModule,
