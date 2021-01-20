@@ -7,8 +7,8 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class ThemePickerComponent implements OnInit {
 
-  @Input() themes: string[] = ['Tema 1', 'Tema 2']
-  @Input() selectedTheme: string = 'Tema 1';
+  @Input() themes: string[] = [];
+  @Input() selectedTheme: string = 'Default';
 
   constructor() {}
 
@@ -16,5 +16,6 @@ export class ThemePickerComponent implements OnInit {
 
   selectTheme = (theme: string): void => {
     this.selectedTheme = theme;
+    localStorage.setItem('theme', theme);
   };
 }

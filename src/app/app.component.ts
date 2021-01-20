@@ -15,8 +15,9 @@ export class AppComponent {
   data: any[];
   subjectData: any[];
   subjectTableTitle: string;
-  tableTitle:string;
+  tableTitle: string;
   tableFooter: string;
+  themes: string[] = ['Tema 1', 'Tema 2'];
 
   constructor(private tableService: ServiceTableService) {}
 
@@ -28,7 +29,7 @@ export class AppComponent {
   getData(): void {
     this.tableService
       .getDataTableApi(this.tableUrl)
-        .subscribe(({ titles, headers, data }) => {
+      .subscribe(({ titles, headers, data }) => {
         const { title, footer } = titles;
         this.tableTitle = title;
         this.tableFooter = footer;
@@ -39,13 +40,13 @@ export class AppComponent {
 
   getSubjectData(): void {
     this.tableService
-    .getDataTableApi(this.subjectTableUrl)
-    .subscribe(({ titles, headers, data }) => {
-    const { title, footer } = titles;
-    this.subjectTableTitle = title;
-    this.tableFooter = footer;
-    this.subjectHeaders = headers;
-    this.subjectData = data;
-  });
+      .getDataTableApi(this.subjectTableUrl)
+      .subscribe(({ titles, headers, data }) => {
+        const { title, footer } = titles;
+        this.subjectTableTitle = title;
+        this.tableFooter = footer;
+        this.subjectHeaders = headers;
+        this.subjectData = data;
+      });
   }
 }
