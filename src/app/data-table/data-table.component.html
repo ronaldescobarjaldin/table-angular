@@ -1,8 +1,8 @@
-<div>
+<div class="container">
   <div>
-    <h2 *ngIf="title">{{title}}</h2>
+    <h2 class="title" *ngIf="title">{{title | uppercase}}</h2>
   </div>
-  <table class="table table-striped">
+  <table class="table table-striped custom-table">
     <thead>
       <tr>
         <th scope="col" *ngFor="let header of headers">{{ header }}</th>
@@ -10,12 +10,12 @@
     </thead>
     <tbody>
       <tr *ngFor="let element of data">
-        <td *ngFor="let property of element | keyvalue: originalOrder">
+        <td *ngFor="let property of element | keyvalue: originalOrder; let i =index" [attr.data-th]="headers[i]" >
           {{ property.value }}
         </td>
       </tr>
-      <tr *ngIf="footer">
-          <td>{{footer}}</td>
+      <tr class="footer" *ngIf="footer">
+          <td [attr.colspan]="headers.length">{{footer | uppercase}}</td>
       </tr>
     </tbody>
   </table>
