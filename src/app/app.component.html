@@ -8,6 +8,7 @@
         <app-theme-picker
           [themes]="themes"
           [selectedTheme]="themes[0]"
+          (toggle)="selectTheme()"
         ></app-theme-picker>
       </div>
     </div>
