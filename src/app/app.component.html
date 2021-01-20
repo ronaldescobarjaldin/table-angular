@@ -1,5 +1,27 @@
-<h1>{{ appTitle }}</h1>
-<app-theme-picker [themes]="themes" [selectedTheme]="themes[0]"></app-theme-picker>
-<app-data-table [title]="tableTitle" [data]="data" [headers]="headers" [footer]="tableFooter"></app-data-table>
-
-<app-data-table [title]="subjectTableTitle" [data]="subjectData" [headers]="subjectHeaders" [footer]=""></app-data-table>
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-10">
+      <h1>{{ appTitle }}</h1>
+    </div>
+    <div class="col">
+      <div class="row justify-content-end">
+        <app-theme-picker
+          [themes]="themes"
+          [selectedTheme]="themes[0]"
+        ></app-theme-picker>
+      </div>
+    </div>
+  </div>
+  <app-data-table
+    [title]="tableTitle"
+    [data]="data"
+    [headers]="headers"
+    [footer]="tableFooter"
+  ></app-data-table>
+  <app-data-table
+    [title]="subjectTableTitle"
+    [data]="subjectData"
+    [headers]="subjectHeaders"
+    [footer]=""
+  ></app-data-table>
+</div>
