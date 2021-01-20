@@ -1,12 +1,12 @@
 <div class="container">
   <div class="row align-items-center">
     <div class="col-10">
-      <h1>{{ appTitle }}</h1>
+      <h1 [class.theme2]="currentTheme.className === 'theme2'">{{ appTitle }}</h1>
     </div>
     <div class="col">
       <div class="row justify-content-end">
         <app-theme-picker
-          [themes]="themes"
+          [themes]="themeService.getAllThemes()"
           [selectedTheme]="currentTheme"
           (refreshTheme)="getTheme()"
         ></app-theme-picker>

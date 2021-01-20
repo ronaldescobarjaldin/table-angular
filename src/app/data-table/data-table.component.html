@@ -2,7 +2,7 @@
   <div>
     <h2 class="title" *ngIf="title">{{title | uppercase}}</h2>
   </div>
-  <table Class="table table-striped custom-table">
+  <table class="table table-striped {{getThemeName()}}">
     <thead>
       <tr>
         <th scope="col" *ngFor="let header of headers">{{ header }}</th>

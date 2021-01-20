@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ServiceTableService } from './services/service-table.service';
+import { Theme } from './theme';
 import { ThemeService } from './theme.service';
 
 @Component({
@@ -18,10 +19,13 @@ export class AppComponent {
   subjectTableTitle: string;
   tableTitle: string;
   tableFooter: string;
-  themes: string[] = ['Tema 1', 'Tema 2'];
-  currentTheme: string;
+  themes: Theme[];
+  currentTheme: Theme;
 
-  constructor(private tableService: ServiceTableService, private themeService: ThemeService) {}
+  constructor(
+    private tableService: ServiceTableService,
+    public themeService: ThemeService
+  ) {}
 
   ngOnInit(): void {
     this.getData();
@@ -54,6 +58,10 @@ export class AppComponent {
   }
 
   getTheme = (): void => {
-    this.currentTheme = this.themeService.getTheme();
+    if (this.themeService.getTheme()) {
+      this.currentTheme = this.themeService.getTheme();
+    } else {
+      this.currentTheme = this.themeService.getAllThemes()[0];
+    }
   };
 }
