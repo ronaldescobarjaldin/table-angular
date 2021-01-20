@@ -1,5 +1,6 @@
 import { Component, Input, Output, OnInit, EventEmitter } from '@angular/core';
 import { ServiceTableService } from '../services/service-table.service';
+import { ThemeService } from '../theme.service';
 
 @Component({
   selector: 'app-theme-picker',
@@ -10,15 +11,15 @@ export class ThemePickerComponent implements OnInit {
 
   @Input() themes: string[] = [];
   @Input() selectedTheme: string = 'Default';
+  @Output() refreshTheme: EventEmitter<any> = new EventEmitter();
 
-
-  constructor(private serviceTableService: ServiceTableService) {}
+  constructor(private themeService: ThemeService) {}
 
   ngOnInit(): void {}
 
   selectTheme = (theme: string): void => {
     this.selectedTheme = theme;
-    localStorage.setItem('theme', theme);
-    this.serviceTableService.theme();
+    this.themeService.setTheme(theme);
+    this.refreshTheme.emit(null);
   };
 }

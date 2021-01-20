@@ -10,9 +10,6 @@ import { SUBJECT_DATA, TABLE_DATA } from '../mock-table';
 export class ServiceTableService {
   constructor(private http: HttpClient) {}
 
-  cambio = false;
-  @Output() change: EventEmitter<boolean> = new EventEmitter();
-
   getDataTableMocks(): Observable<any> {
     return of(TABLE_DATA);
   }
@@ -24,8 +21,5 @@ export class ServiceTableService {
   getDataTableApi(url): Observable<any> {
     return this.http.get(url);
   }
-  theme() {
-    this.cambio = !this.cambio;
-    this.change.emit(this.cambio);
-  }
+
 }

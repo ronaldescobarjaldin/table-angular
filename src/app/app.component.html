@@ -7,8 +7,8 @@
       <div class="row justify-content-end">
         <app-theme-picker
           [themes]="themes"
-          [selectedTheme]="themes[0]"
-          (toggle)="selectTheme()"
+          [selectedTheme]="currentTheme"
+          (refreshTheme)="getTheme()"
         ></app-theme-picker>
       </div>
     </div>

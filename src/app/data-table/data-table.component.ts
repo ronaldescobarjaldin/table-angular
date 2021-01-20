@@ -7,21 +7,17 @@ import { ServiceTableService } from '../services/service-table.service';
   templateUrl: './data-table.component.html',
   styleUrls: ['./data-table.component.scss'],
 })
-export class DataTableComponent  implements OnInit {
+export class DataTableComponent implements OnInit {
+  
   @Input() title: string;
   @Input() footer: string;
   @Input() headers: string[];
   @Input() data: any[];
 
-  theme = '';
-  valorTema = false;
+  constructor() {}
 
-  constructor(private Service: ServiceTableService) {}
-  ngOnInit(): void {
-    this.Service.change.subscribe(tema => this.theme = tema,
-      error => console.log(error),
-      () => console);
-  }
+  ngOnInit(): void {}
+
   originalOrder = (
     a: KeyValue<number, string>,
     b: KeyValue<number, string>
