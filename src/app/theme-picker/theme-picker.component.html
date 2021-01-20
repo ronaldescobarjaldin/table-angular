@@ -1,9 +1,8 @@
 <div class="col">
     <div ngbDropdown class="d-inline-block">
-      <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selectedTheme}}</button>
-      <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-        <button (click)="selectTheme('Tema 1')" ngbDropdownItem>Tema 1</button>
-        <button (click)="selectTheme('Tema 2')" ngbDropdownItem>Tema 2</button>
+      <button class="btn btn-outline-primary" id="themeDropdown" ngbDropdownToggle>{{selectedTheme}}</button>
+      <div ngbDropdownMenu aria-labelledby="themeDropdown" >
+        <button *ngFor="let theme of themes" (click)="selectTheme(theme)" ngbDropdownItem>{{theme}}</button>
       </div>
     </div>
   </div>
