@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 
 import { HttpClient } from '@angular/common/http';
-import { TABLE_DATA } from '../mock-table';
+import { SUBJECT_DATA, TABLE_DATA } from '../mock-table';
 
 @Injectable({
   providedIn: 'root',
@@ -12,6 +12,10 @@ export class ServiceTableService {
 
   getDataTableMocks(): Observable<any> {
     return of(TABLE_DATA);
+  }
+
+  getSubjectTableMocks(): Observable<any> {
+    return of(SUBJECT_DATA);
   }
 
   getDataTableApi(url): Observable<any> {

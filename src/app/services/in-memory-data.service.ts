@@ -48,6 +48,64 @@ export class InMemoryDataService implements InMemoryDbService {
         },
       ],
     };
-    return { table };
+    const subjectTable = {
+      titles: {
+        title: 'Materias',
+        footer: '',
+      },
+      headers: ['Código', 'Nombre', 'Creditos', 'Docente', 'Paralelo'],
+      data: [
+        {
+          code: 'SIS-001',
+          name: 'Ingenieria de sistemas',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+        {
+          code: 'SIS-002',
+          name: 'Ingenieria de sistemas 2',
+          credit: '5',
+          professor: "-------",
+          parallel: 1
+        },
+        {
+          code: 'SIS-003',
+          name: 'Sistemas de información 1',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+        {
+          code: 'SIS-004',
+          name: 'Sistemas de informacion 2',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+        {
+          code: 'SIS-005',
+          name: 'Taller de sistemas de información',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+        {
+          code: 'SIS-006',
+          name: 'Taller de programación',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+        {
+          code: 'SIS-007',
+          name: 'Taller de desarrollo de software',
+          credit: '5',
+          professor: "-------",
+          parallel: 3
+        },
+      ]
+    };
+    return { table, subjectTable };
   }
 }
