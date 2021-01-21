@@ -58,10 +58,6 @@ export class AppComponent {
   }
 
   getTheme = (): void => {
-    if (this.themeService.getTheme()) {
-      this.currentTheme = this.themeService.getTheme();
-    } else {
-      this.currentTheme = this.themeService.getAllThemes()[0];
-    }
+    this.currentTheme = this.themeService.getTheme();
   };
 }
