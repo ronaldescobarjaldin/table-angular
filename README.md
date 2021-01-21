@@ -1,27 +1,46 @@
 # TableAngular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.7.
+## ¿Qué es?
+Este proyecto consiste de una tabla responsiva. Esta tabla es genérica y reutilizable, puede funcionar con distintas cantidades de filas y columnas.
 
-## Development server
+A su vez, cuenta con un selector de tema. Al cambiar el tema, cambian los colores de la tabla y el título. El tema seleccionado persiste al refrescar la página.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Este proyecto fue generado con [Angular CLI](https://github.com/angular/angular-cli) versión 11.0.7.
 
-## Code scaffolding
+## Requisitos
+- [NodeJS](https://nodejs.org/es/)
+- [Angular](https://angular.io/)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Instrucciones
+1. Clonar el repositorio con `git clone https://github.com/ronaldescobarjaldin/table-angular`
+2. Instalar las dependencias con `npm install`
+3. Hacer correr la aplicación con `ng serve -o`
 
-## Build
+## Comandos
+Para instalar las dependencias ejecutar el comando:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    npm install
 
-## Running unit tests
+Para hacer correr el proyecto localmente, ejecutar el comando:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    ng serve
 
-## Running end-to-end tests
+Se ejecutará localmente la aplicación en [localhost:4200](http://localhost:4200). Si se agrega el flag `-o` se abre automáticamente el navegador en esa URL.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Para generar un nuevo componente usando Angular CLI, ejecutar el comando:
 
-## Further help
+    ng generate component nombre-del-componente
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Para compilar/transpilar el código, ejecutar el comando:
+
+    ng build
+
+Esto generará el código compilado/transpilado en la carpeta `dist`. Agregar el flag `--prod` para que el código generado sea para producción.
+
+## Librerías/extensiones utilizadas
+- [ng-bootstrap](https://ng-bootstrap.github.io/#/home)
+- [SCSS](https://sass-lang.com/documentation/syntax)
+
+## Captura de pantalla
+
+![screenshot](./screenshot.png)
